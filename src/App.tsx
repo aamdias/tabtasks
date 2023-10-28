@@ -1,35 +1,28 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import ToDoList from "./components/ToDoList/todolist";
+import { useState, useEffect } from 'react';
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const [pageTitle, setPageTitle] = useState<string>("My To Do's");
+
+  useEffect(() => {
+      // Check if the chrome.tabs API is available (i.e., running in a Chrome extension context)
+      if (chrome.tabs) {
+          chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+              const currentTab = tabs[0];
+              if (currentTab && currentTab.title) {
+                  setPageTitle(currentTab.title);
+              }
+          });
+      }
+  }, []);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className="App">
+      <h1>{`Tasks of  ${pageTitle}`}</h1>
+      <ToDoList />
+    </div>
   )
 }
 
-export default App
+
+

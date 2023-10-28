@@ -1,0 +1,52 @@
+.input-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 400px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 1rem;
+    list-style-type: none;
+    width: 100%;
+    max-width: 400px;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+input {
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    border: none;
+    height: 36px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 12px;
+    color: #1c1c1c;
+    background-color: #e1e1e1;
+}
+
+.input-button{
+    height: 36px;
+    background-color: rgba(255, 255, 255, 0.1); // Slight white transparency
+    border: 1px solid rgba(255, 255, 255, 0.2); // Subtle border
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  // Subtle shadow
+    backdrop-filter: blur(10px);               // The blur effect
+    border-radius: 12px;                       // Rounded edges
+    padding: 10px 15px;                        // Some padding
+    transition: all 0.3s ease;   
+}
+
+button {
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #2e2e2e;  
+    color: #e1e1e1;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}

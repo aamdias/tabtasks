@@ -6,10 +6,17 @@
         "default_popup":"index.html"
     },
     "permissions":[
-        "scripting"
+        "scripting",
+        "activeTab"
     ],
     "host_permissions":[
         "http://*/*",
         "https://*/*"
-    ]
+    ],
+    "icons": {
+        "16": "checklist-icon.png",
+        "32": "checklist-icon.png",
+        "48": "checklist-icon.png",
+        "128": "checklist-icon.png"
+    }
 }
