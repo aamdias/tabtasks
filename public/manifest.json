@@ -18,5 +18,14 @@
         "32": "checklist-icon.png",
         "48": "checklist-icon.png",
         "128": "checklist-icon.png"
-    }
+    },
+    "commands": {
+        "_execute_browser_action": {
+          "suggested_key": {
+            "default": "Ctrl+.",
+            "mac": "Command+."
+          },
+          "description": "Open the extension popup"
+        }
+      }
 }
