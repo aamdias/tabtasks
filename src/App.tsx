@@ -20,6 +20,7 @@ export default function App() {
     <div className="App">
       <h1>{`Tasks of  ${pageTitle}`}</h1>
       <ToDoList />
+      <p className="footer">Tip: "ctrl + ."  can trigger this extension!</p>
     </div>
   )
 }
