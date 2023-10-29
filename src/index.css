@@ -1,0 +1,38 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  min-width: 400px;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #1c1c1c;
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 32px;
+  height: 100vh;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #1c1c1c;
+  color: #e1e1e1;
+}
+
+h1 {
+  font-size: 1.5em;
+  line-height: 1.1;
+}
+
+.footer{
+  font-size: 1rem;
+  font-style: italic;
+}
