@@ -1,5 +1,6 @@
 import ToDoList from "./components/ToDoList/todolist";
 import { useState, useEffect } from 'react';
+import Key from "./components/Key/key";
 
 export default function App() {
   const [pageTitle, setPageTitle] = useState<string>("My To Do's");
@@ -20,7 +21,7 @@ export default function App() {
     <div className="App">
       <h1>{`Tasks of  ${pageTitle}`}</h1>
       <ToDoList />
-      <p className="footer">Tip: "ctrl + ."  can trigger this extension!</p>
+      <p className="footer"><Key label="Ctrl" /> + <Key label="." /> can open these tasks!</p>
     </div>
   )
 }

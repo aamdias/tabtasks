@@ -1,0 +1,13 @@
+.keyboard-key {
+    display: inline-block;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 4px 8px;
+    margin: 0 2px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    background-color: #2e2e2e;
+    color: #ccc;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.9em;
+    text-decoration: none;
+}
