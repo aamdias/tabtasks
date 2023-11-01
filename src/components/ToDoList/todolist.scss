@@ -40,6 +40,20 @@ input {
     transition: all 0.3s ease;   
 }
 
+.zero-tasks-placeholder{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 8px 0px;
+    border-radius: 8px;
+    min-height: 40px;
+    font-size: 1rem;
+    color: #e1e1e1;
+}
+
 button {
     padding: 0.8rem 1.2rem;
     font-size: 1rem;
