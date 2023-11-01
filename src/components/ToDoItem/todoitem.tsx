@@ -7,6 +7,7 @@ import './todoitem.scss';
 type Task = {
     id:number,
     title: string
+    tag: string  // the active tab's title
 }
 
 type ToDoItemProps = {
@@ -32,14 +33,17 @@ export default function ToDoItem ({task,onDelete}:ToDoItemProps) {
                     />
                     <label htmlFor={`checkbox-${task.id}`}></label>
                 </div>
-                <motion.p 
-                    className={isFinished ? 'task task__finished' : 'task'}
-                    initial={{ textDecoration: 'none' }}
-                    animate={{ textDecoration: isFinished ? 'line-through' : 'none' }}
-                    transition={{ duration: 0.5 }}
-                >
-                    {task.title}
-                </motion.p>
+                <div className="task-text-wrapper">
+                    <motion.p 
+                        className={isFinished ? 'task task__finished' : 'task'}
+                        initial={{ textDecoration: 'none' }}
+                        animate={{ textDecoration: isFinished ? 'line-through' : 'none' }}
+                        transition={{ duration: 1 }}
+                    >
+                        {task.title}
+                    </motion.p>
+                    <span className="task-tag">{task.tag}</span>
+                </div>
             </div>
             <button onClick={onDelete} className= "delete-button">
                 <FaTrash />  
