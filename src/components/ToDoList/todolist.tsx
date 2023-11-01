@@ -24,7 +24,6 @@ export default function ToDoList () {
         });
     }, []);
 
-
     // When a new task is added, the task list is updated and the input field is cleaned
     const handleAddTask = () => {
         if (taskInput.trim()) {
@@ -67,8 +66,13 @@ export default function ToDoList () {
                     <BsPlusCircle />
                 </button>
             </div>
-
-            <ul>
+            {tasks.length === 0 && 
+                <div className="zero-tasks-placeholder">
+                    Hey! Insert your first task. What do you want to do in this tab?
+                </div>
+            }
+            {tasks.length !== 0 &&
+                <ul>
                 {tasks.map(task => (
                     <ToDoItem
                         key={task.id}
@@ -76,7 +80,8 @@ export default function ToDoList () {
                         onDelete={ () => handleDeleteTask(task.id)}
                     />
                 ))}
-            </ul>
+                </ul>
+            }
         </>
     );
 }

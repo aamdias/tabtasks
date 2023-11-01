@@ -35,4 +35,15 @@ h1 {
 .footer{
   font-size: 1rem;
   font-style: italic;
+  margin: 4px 0px;
+}
+
+.without_italic {
+  font-style: normal;
+}
+
+.feedback-link{
+  margin: 0;
+  text-decoration: underline;
+  color:aquamarine;
 }

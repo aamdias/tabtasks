@@ -22,6 +22,7 @@ export default function App() {
       <h1>{`Tasks of  ${pageTitle}`}</h1>
       <ToDoList />
       <p className="footer"><Key label="Ctrl" /> + <Key label="." /> can open these tasks!</p>
+      <p className="footer without_italic"> Feedbacks <a href="https://tally.so/r/w47VGY" target="_blank" className="feedback-link">here</a></p>
     </div>
   )
 }
