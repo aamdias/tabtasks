@@ -1,6 +1,6 @@
 # Tab Tasks
 
-This is a Chrome extension made to help organize tasks within each browser tab context. I was made with React, Typescript and Manifest V3.
+This is a Chrome extension made to help organize tasks within each browser tab context. Made with React, Typescript and Manifest V3.
 
 ## Installation
 
