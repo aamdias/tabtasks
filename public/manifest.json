@@ -1,6 +1,7 @@
 {
     "manifest_version":3,
     "version":"1.0.0",
+    "description":"Organize your tasks in a simple way within each browser tab",
     "name":"Tab Tasks",
     "action":{
         "default_popup":"index.html"

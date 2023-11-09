@@ -7,7 +7,8 @@ import './todolist.scss';
 type Task = {
     id: number,
     title: string,
-    tag: string  
+    tag: string,
+    checked: boolean, 
 }
 
 export default function ToDoList () {
@@ -30,13 +31,19 @@ export default function ToDoList () {
             chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
                 const currentTab = tabs[0];
                 if (currentTab && currentTab.title) {
-                    const newTasks = [...tasks, { id: Date.now(), title: taskInput.trim(), tag: currentTab.title }];
+                    const newTasks = [...tasks, { id: Date.now(), title: taskInput.trim(), tag: currentTab.title, checked: false }];
                     setTasks(newTasks);
                     setTaskInput("");
                     chrome.storage.sync.set({ tasks: newTasks });  // Save tasks to storage
                 }
             });
         }
+    }
+
+    const handleCheckChange = (id: number, checked: boolean) => {
+        const updatedTasks = tasks.map(task => task.id === id ? { ...task, checked } : task);
+        setTasks(updatedTasks);
+        chrome.storage.sync.set({ tasks: updatedTasks });  // Save tasks to storage
     }
 
     const handleDeleteTask = (taskId:number) => {
@@ -78,6 +85,7 @@ export default function ToDoList () {
                         key={task.id}
                         task={task}
                         onDelete={ () => handleDeleteTask(task.id)}
+                        onCheckChange={(e: React.ChangeEvent<HTMLInputElement>) => handleCheckChange(task.id, e.target.checked)}   
                     />
                 ))}
                 </ul>

@@ -7,19 +7,23 @@ import './todoitem.scss';
 type Task = {
     id:number,
     title: string
-    tag: string  // the active tab's title
+    tag: string,
+    checked: boolean  
 }
 
 type ToDoItemProps = {
     task: Task,
     onDelete: () => void;
+    onCheckChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export default function ToDoItem ({task,onDelete}:ToDoItemProps) {
-    const [isFinished, setFinished] = useState(false);
+export default function ToDoItem ({task,onDelete, onCheckChange}:ToDoItemProps) {
+    const [isFinished, setFinished] = useState(task.checked);
 
-    const handleCheckbox = () => {
-        setFinished(!isFinished);
+    const handleCheckbox = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const checked = e.target.checked;
+        setFinished(checked);
+        onCheckChange(e);
     }
 
     return (
@@ -30,6 +34,7 @@ export default function ToDoItem ({task,onDelete}:ToDoItemProps) {
                         type="checkbox"
                         id={`checkbox-${task.id}`}
                         onChange={handleCheckbox}
+                        checked={isFinished}
                     />
                     <label htmlFor={`checkbox-${task.id}`}></label>
                 </div>
