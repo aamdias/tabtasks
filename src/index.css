@@ -33,13 +33,17 @@ h1 {
 }
 
 .footer{
-  font-size: 1rem;
+  position: absolute;
+  bottom: 44px;
+  font-size: 0.8rem;
   font-style: italic;
   margin: 4px 0px;
 }
 
 .without_italic {
   font-style: normal;
+  font-size: 0.8rem;
+  bottom: 16px;
 }
 
 .feedback-link{
