@@ -79,16 +79,19 @@ export default function ToDoList () {
                 </div>
             }
             {tasks.length !== 0 &&
-                <ul>
-                {tasks.map(task => (
-                    <ToDoItem
-                        key={task.id}
-                        task={task}
-                        onDelete={ () => handleDeleteTask(task.id)}
-                        onCheckChange={(e: React.ChangeEvent<HTMLInputElement>) => handleCheckChange(task.id, e.target.checked)}   
-                    />
-                ))}
-                </ul>
+                <>
+                    <ul className="todo-list-container">
+                        {tasks.sort((a, b) => a.checked === b.checked ? 0 : a.checked ? 1 : -1).map(task => (
+                            <ToDoItem
+                                key={task.id}
+                                task={task}
+                                onDelete={ () => handleDeleteTask(task.id)}
+                                onCheckChange={(e: React.ChangeEvent<HTMLInputElement>) => handleCheckChange(task.id, e.target.checked)}   
+                            />
+                        ))}
+                    </ul>
+                    <div className="blur-effect"></div>
+                </>
             }
         </>
     );

@@ -23,8 +23,8 @@
     "commands": {
         "_execute_action": {
           "suggested_key": {
-            "default": "Ctrl+Period",
-            "mac": "MacCtrl+Period"
+            "default": "Ctrl+Shift+O",
+            "mac": "MacCtrl+Shift+O"
           },
           "description": "Open the extension popup"
         }

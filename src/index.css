@@ -18,7 +18,42 @@
   flex-direction: column;
   align-items: flex-start;
   margin: 32px;
-  height: 100vh;
+  height: 440px;
+}
+
+
+.todo-list-container{
+  width: 100%;
+  height: 280px;
+  overflow-y: auto;
+  position: relative;
+}
+
+.blur-effect{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;  
+  background: linear-gradient(to top, #1c1c1c, transparent);
+  pointer-events: none;  
+}
+
+.todo-list-container::-webkit-scrollbar {
+  width: 4px;  
+}
+
+.todo-list-container::-webkit-scrollbar-track {
+  background: #555;  
+}
+
+.todo-list-container::-webkit-scrollbar-thumb {
+  background: #888;  
+}
+
+.todo-list-container::-webkit-scrollbar-thumb:hover {
+  background: #1c1c1c;  
 }
 
 body {
@@ -49,5 +84,5 @@ h1 {
 .feedback-link{
   margin: 0;
   text-decoration: underline;
-  color:aquamarine;
+  color:#e1e1e1;
 }
